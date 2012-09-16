@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120914083125) do
+ActiveRecord::Schema.define(:version => 20120916054418) do
 
   create_table "static_pages", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -22,8 +22,9 @@ ActiveRecord::Schema.define(:version => 20120914083125) do
     t.string   "name"
     t.string   "email"
     t.string   "place"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.string   "password_digest"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
