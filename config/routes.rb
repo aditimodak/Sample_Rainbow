@@ -1,7 +1,9 @@
 WebsiteRainbow::Application.routes.draw do
-  get "users/new"
+  #get "users/new"
 
-  get "static_pages/home"
+  #get "static_pages/home"
+  resources :users
+
   match '/home', to: 'static_pages#home'
   match '/signup',  to: 'users#new'
   match '/help',    to: 'static_pages#help'
@@ -15,6 +17,8 @@ WebsiteRainbow::Application.routes.draw do
   #get "static_pages/recommendations"
 
   resources :static_pages
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
