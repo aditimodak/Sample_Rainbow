@@ -28,6 +28,8 @@ describe User do
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
   it { should respond_to(:authenticate) }
+  it { should respond_to(:travelposts) }
+
 
   describe "with a password that's too short" do
     before { @user.password = @user.password_confirmation = "a" * 5 }

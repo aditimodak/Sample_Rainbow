@@ -10,6 +10,18 @@
       </h1>
     </section>
   </aside>
+
+  <div class="span8">
+    <% if @user.travelposts.any? %>
+        <h3>Travelposts (<%= @user.travelposts.count %>)</h3>
+        <ol class="travelposts">
+          <%= render @travelposts %>
+        </ol>
+        <%= will_paginate @travelposts %>
+    <% end %>
+  </div>
+</div>
+
 </div>
 
 
