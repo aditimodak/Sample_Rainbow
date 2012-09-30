@@ -1,0 +1,8 @@
+<%= form_for(@travelpost) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="field">
+      <%= f.text_area :content, placeholder: "I was here" %>
+      <%= f.text_area :destination, placeholder: "Coolest things to do here..." %>
+    </div>
+    <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+<% end %>

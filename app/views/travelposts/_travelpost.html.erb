@@ -1,0 +1,13 @@
+<li>
+  <span class="content"><%= travelpost.content %></span>
+  <span class="destination"><%= travelpost.destination %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(travelpost.created_at) %> ago.
+  </span>
+  <% if current_user?(travelpost.user) %>
+      <%= link_to "delete", travelpost, method: :delete,
+                  data: { confirm: "You sure?" },
+                  title: travelpost.content %>
+  <% end %>
+
+</li>
