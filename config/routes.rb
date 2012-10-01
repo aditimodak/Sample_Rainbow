@@ -2,9 +2,16 @@ WebsiteRainbow::Application.routes.draw do
   #get "users/new"
 
   #get "static_pages/home"
-  resources :users
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+
   resources :sessions, only: [:new, :create, :destroy]
   resources :travelposts, only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy]
+
 
   match '/home', to: 'static_pages#home'
   match '/signup',  to: 'users#new'
